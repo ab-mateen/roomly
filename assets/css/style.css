@@ -1,0 +1,1312 @@
+:root {
+    --ui-dark: #023D4D;
+    --ui-text: #356072;
+    --ui-green: #40B680;
+    --ui-green2: #00AC47;
+    --ui-blue: #1877F2;
+    --ui-blue2: #3283FC;
+    --ui-grey: #F9F9F9;
+    --ui-red: #FE2C25;
+    --ui-orange: #FFBB00;
+    --ui-font-regular: 'Objectivity Regular';
+    --ui-font-medium: 'Objectivity Medium';
+    --ui-font-bold: 'Objectivity Bold';
+}
+
+.bg-green {
+    background-color: var(--ui-green) !important;
+}
+
+.text-green {
+    color: var(--ui-green) !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--ui-grey);
+    font-family: var(--ui-font-regular);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a,
+button,
+a:hover,
+button:hover {
+    transition: .3s all ease;
+}
+
+
+/* Customize Bootsrap Container */
+
+@media (min-width: 1230px) {
+    .container {
+        max-width: 1202px;
+    }
+}
+
+
+/* Adding Fonts */
+
+@font-face {
+    font-family: 'Objectivity Regular';
+    src: url(../fonts/objectivity.regular.otf);
+}
+
+@font-face {
+    font-family: 'Objectivity Medium';
+    src: url(../fonts/Objectivity-Medium.otf);
+}
+
+@font-face {
+    font-family: 'Objectivity Bold';
+    src: url(../fonts/objectivity.bold.otf);
+}
+
+
+/* Site Header */
+
+header .site-header {
+    background: #fff;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
+}
+
+.site-header nav {
+    padding: 5px 0;
+}
+
+.site-header nav ul li a {
+    opacity: 1;
+}
+
+.site-header nav ul li a:not(.btn) {
+    color: var(--ui-text);
+    margin-left: 13px;
+    position: relative;
+}
+
+.site-header nav li.avtive a:not(.btn) {
+    font-family: var(--ui-font-medium);
+    color: var(--ui-dark);
+}
+
+.site-header nav ul li a.btn {
+    font-size: 16px;
+    padding: 7px 23px !important;
+    border: 1px solid var(--ui-text);
+    border-radius: 4px;
+    color: var(--ui-text);
+}
+
+.site-header nav ul li a.btn:hover {
+    background: var(--ui-text);
+    color: #fff !important;
+}
+
+.site-header nav ul li a.sign-up {
+    margin: 20px 0 0;
+    border-color: var(--ui-green);
+    background: var(--ui-green);
+    color: #fff !important;
+}
+
+@media (min-width: 576px) {
+    .site-header nav ul li a.sign-up {
+        margin: 0 0 0 20px;
+    }
+}
+
+.site-header nav ul li a.sign-up:hover {
+    background: transparent;
+    color: var(--ui-green) !important;
+}
+
+
+/* Dashbaord Nav */
+
+.site-header.dashboard button.navbar-toggler {
+    position: absolute;
+    right: 0;
+}
+
+.site-header nav ul li a:not(.btn)::before {
+    content: '';
+    position: absolute;
+    background: var(--ui-green);
+    height: 2px;
+    width: 0;
+    border-radius: 30px;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    margin: auto;
+    transition: .3s all ease;
+}
+
+.site-header nav ul li.active a::before,
+.site-header nav ul li a:hover::before {
+    width: 40px;
+    transition: .3s all ease;
+}
+
+.site-header .dropdown button {
+    box-shadow: none;
+    position: relative;
+}
+
+button#dropdownNotification {
+    margin: 0 29px 0 22px;
+}
+
+button#dropdownNotification img {
+    width: 26px;
+    height: 26px;
+}
+
+button#dropdownNotification::after {
+    content: unset;
+}
+
+button#dropdownProfile {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+button#dropdownProfile::after {
+    position: absolute;
+    right: 24px;
+    bottom: 10px;
+}
+
+button#dropdownProfile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+button#dropdownProfile p:not(.pro-settings) {
+    font-size: 18px;
+    font-family: var(--ui-font-medium);
+    color: var(--ui-dark);
+}
+
+button#dropdownProfile p.pro-settings {
+    position: relative;
+    font-size: 16px;
+    color: var(--ui-text);
+    margin: -4px 0 0;
+}
+
+@media (max-width: 991px) {
+    .site-header.dashboard nav {
+        padding-right: 70px;
+    }
+    .site-header .navbar-collapse {
+        position: absolute;
+        top: 70px;
+        background: #fff;
+        left: 0px;
+        right: 0;
+        padding: 20px;
+        z-index: 10;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0px 6px 30px rgb(0 0 0 / 6%);
+    }
+    .site-header .noti-drop {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header nav ul li a:not(.btn)::before {
+        left: 0;
+        right: unset;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-header .navbar-brand img {
+        max-width: 120px;
+    }
+    button#dropdownProfile img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-header .noti-drop {
+        display: none;
+    }
+}
+
+
+/* Layout Login SignUp Page */
+
+section.site-main .main-row {
+    padding: 50px 15px;
+}
+
+@media (min-width: 768px) {
+    section.site-main .main-row {
+        min-height: calc(100vh - 71px);
+        padding: 0 0;
+    }
+}
+
+section.site-main .page-col {
+    max-width: 570px;
+    margin: auto;
+    width: 100%;
+}
+
+.section-title h1 {
+    color: var(--ui-dark);
+    font-family: var(--ui-font-bold);
+    font-size: 36px;
+}
+
+.section-title p {
+    color: var(--ui-text);
+    margin: 14px 0 0;
+}
+
+.page-col .form-col {
+    background: #fff;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+.page-col .form-col input {
+    height: 50px;
+    color: var(--ui-text);
+    border-radius: 5px;
+}
+
+.page-col .form-col input::placeholder {
+    color: var(--ui-text);
+}
+
+.page-col .form-col input[type="submit"] {
+    background: var(--ui-green);
+    color: #fff;
+    transition: .3s all ease;
+    border-color: var(--ui-green);
+    font-family: var(--ui-font-medium);
+}
+
+.page-col .form-col input[type="submit"]:hover {
+    background: transparent;
+    color: var(--ui-green);
+    transition: .3s all ease;
+}
+
+.page-col .form-col .sign-with-client {
+    margin-top: 40px;
+    border-top: 0.3px solid rgb(223, 230, 233);
+    position: relative;
+    padding-top: 40px;
+}
+
+.form-col .sign-with-client p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    top: -12px;
+    background: #fff;
+    padding: 0 9px;
+}
+
+.form-col .sign-with-client button {
+    font-size: 16px;
+    color: var(--ui-text);
+    border: 0.3px solid #023D4D;
+    border-radius: 5px;
+    width: 100%;
+    padding: 12px 5px 12px 15px;
+    text-align: left;
+}
+
+.form-col .sign-with-client button:last-of-type {
+    margin-top: 20px;
+}
+
+.form-col .sign-with-client button img {
+    max-width: 19px;
+    margin-right: 10px;
+}
+
+.form-col .sign-with-client button:last-of-type img {
+    max-width: 10px;
+}
+
+
+/* ========================================== create Profile Page ======================= */
+
+.form-col .profile-img {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 50px;
+}
+
+.form-col .profile-img img {
+    height: 100%;
+}
+
+.form-col .profile-img label {
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin: 0;
+    bottom: 13px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.form-col .profile-img label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-col .slect-with-icon select {
+    padding-left: 48px;
+    height: 50px;
+}
+
+.form-col .slect-with-icon img,
+.form-col .slect-with-icon i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 17px;
+    height: 17px;
+    left: 20px;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .form-col .sign-with-client button {
+        width: 48%;
+    }
+    .form-col .sign-with-client button:last-of-type {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    div#navbarNav {
+        padding: 30px 0;
+    }
+    .section-title h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 390px) {
+    .section-title h1 {
+        font-size: 24px;
+    }
+    .section-title p {
+        font-size: 14px;
+    }
+    .page-col .form-col {
+        padding: 20px;
+    }
+}
+
+
+/* Register Page */
+
+.form-col .label-top label {
+    position: absolute;
+    color: var(--ui-dark);
+    font-size: 12px;
+    margin: auto;
+    background: #fff;
+    top: -7px;
+    left: 9px;
+    padding: 0 4px;
+}
+
+.form-col .pwd-field-eye button {
+    position: absolute;
+    color: var(--ui-dark);
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content;
+    line-height: 1.0;
+}
+
+span.pwd-error {
+    display: block;
+    margin: -12px 0 12px;
+    font-size: 14px;
+    color: #E22357;
+}
+
+.form-col .pwd-power span {
+    border-radius: 50px;
+    height: 4px;
+    width: 18%;
+    background-color: rgb(204, 216, 219);
+}
+
+.form-col .forget-pwd {
+    text-decoration: underline;
+}
+
+.page-content a.reset-pwd-btn {
+    background: var(--ui-green);
+    font-family: var(--ui-font-medium);
+    color: #fff;
+    width: 100%;
+    border: 1px solid var(--ui-green);
+    padding: 12px 10px;
+}
+
+.page-content a.reset-pwd-btn:hover {
+    background: transparent;
+    color: var(--ui-green);
+}
+
+
+/* Button CSS Change for Connect Calendar Page */
+
+.page-content.connect-calnder .client-btn button {
+    position: relative;
+}
+
+.page-content.connect-calnder .client-btn button img {
+    max-width: 22px !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12px;
+    margin: auto;
+    height: fit-content;
+}
+
+
+/* Skip These Steps */
+
+.page-content .skip-this a {
+    color: var(--ui-text);
+}
+
+
+/* Dashboard Page */
+
+.green-btn {
+    font-size: 16px;
+    color: #fff;
+    background: var(--ui-green);
+    border: 1px solid var(--ui-green);
+    border-radius: 5px;
+    padding: 12px 26px;
+}
+
+.green-btn:hover {
+    background: transparent;
+    color: var(--ui-green);
+}
+
+
+/* Booking Columns */
+
+.dashboard-content .booking-info-col {
+    background: #fff;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    padding: 20px 20px;
+}
+
+.booking-info-col h2 {
+    font-family: var(--ui-font-bold);
+    font-size: 20px;
+    color: var(--ui-dark);
+}
+
+.booking-info-col .booking-on-off {
+    color: var(--ui-dark);
+    margin: 26px 0 13px;
+}
+
+
+/* The switch - the box around the slider */
+
+.toggle-btn .switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    margin: 0;
+}
+
+
+/* Hide default HTML checkbox */
+
+.toggle-btn .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+.toggle-btn .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(204, 216, 219);
+    border-radius: 3px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle-btn .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 9px;
+    left: 6px;
+    bottom: 5px;
+    background-color: var(--ui-dark);
+    border-radius: 1px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle-btn input:checked+.slider {
+    background-color: var(--ui-green);
+}
+
+.toggle-btn input:checked+.slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+    background-color: #fff;
+}
+
+
+/* Booking Meeting Link */
+
+.booking-info-col .meeting-link a i {
+    color: var(--ui-dark);
+    font-size: 19px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.booking-info-col .meeting-link p {
+    font-family: var(--ui-font-medium);
+    color: var(--ui-dark);
+    margin-top: 15px;
+}
+
+.booking-info-col .meeting-link p i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.booking-info-col .meeting-description {
+    font-size: 14px;
+    margin: 16px 0 19px;
+    line-height: 24px;
+}
+
+.booking-manage-button button {
+    width: 100%;
+}
+
+.btn-delete {
+    border: 1px solid rgb(240, 145, 171);
+    color: #E22357;
+    padding: 12px 5px;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+    border-color: #E22357;
+    background: #E22357;
+    color: #fff;
+}
+
+.btn-edit {
+    border: 1px solid rgb(159, 218, 191);
+    color: var(--ui-green);
+    padding: 12px 5px;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+    border-color: var(--ui-green);
+    background: var(--ui-green);
+    color: #fff;
+}
+
+
+/* ========================== Create Event ========================== */
+
+.creat-event-content .form-col input,
+.creat-event-content .form-col textarea {
+    padding-left: 20px;
+}
+
+.creat-event-content .form-col textarea,
+.creat-event-content .form-col textarea::placeholder {
+    color: var(--ui-dark);
+}
+
+.creat-event-content .form-col .label-top label {
+    left: 16px;
+}
+
+.creat-event-content .form-col .label-top i {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+
+/* EVEnt Days */
+
+.creat-event-content .event-days label {
+    border: 0.3px solid #023D4D;
+    border-radius: 5px;
+    padding: 10px 20px 10px 48px;
+    position: relative;
+}
+
+.creat-event-content .event-days label::before {
+    content: '';
+    position: absolute;
+    background: var(--ui-green);
+    border-radius: 3px;
+    width: 18px;
+    height: 18px;
+    bottom: 0;
+    margin: auto;
+    top: -3px;
+    left: 20.99999999px;
+    cursor: pointer;
+}
+
+.creat-event-content .event-days label::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 1px;
+    width: 8px;
+    height: 8px;
+    bottom: 0;
+    margin: auto;
+    top: -3px;
+    left: 25px;
+    cursor: pointer;
+    display: none;
+    transition: .3s all ease;
+}
+
+.creat-event-content [class*="event-day-"] input:checked+label::after {
+    display: inline-block;
+    transition: .3s all ease;
+}
+
+.event-days label p {
+    color: var(--ui-dark);
+}
+
+.event-days label .day-time {
+    width: 63%;
+}
+
+.event-days label .day-time p {
+    background: #F2F5F7;
+    border-radius: 5px;
+    line-height: 1.0;
+    color: var(--ui-dark);
+    padding: 4px 14px 2px;
+    display: flex;
+    align-items: center;
+}
+
+.event-days label .day-time span {
+    color: var(--ui-dark);
+    margin: 0 10px;
+}
+
+.event-days label .day-time button {
+    margin-left: 20px;
+}
+
+.creat-event-content .event-days label.is-unavail::before {
+    background: var(--ui-dark);
+    opacity: 0.2;
+}
+
+.creat-event-content .event-days label.is-unavail::after {
+    background: var(--ui-dark);
+}
+
+.event-days label.is-unavail p {
+    background: transparent;
+}
+
+.event-days .event-quest {
+    margin: 30px 0;
+}
+
+.event-quest h4 {
+    font-size: 22px;
+    color: var(--ui-dark);
+    font-family: var(--ui-font-medium);
+}
+
+.event-quest h4 span {
+    font-family: var(--ui-font-regular);
+}
+
+.event-quest input {
+    border: 0.3px solid #023D4D;
+    border-radius: 5px;
+    color: var(--ui-dark);
+    padding-left: 20px;
+    margin-right: 10px;
+}
+
+.event-quest button.btn {
+    background: var(--ui-dark);
+    color: #fff;
+    width: 50px;
+    font-size: 24px;
+}
+
+.event-days .create-btn button {
+    padding: 12px 29px;
+    font-family: var(--ui-font-medium);
+}
+
+.event-days .create-btn .btn-edit {
+    background: var(--ui-green);
+    margin-left: 20px;
+    color: #fff;
+}
+
+.event-days .create-btn .btn-edit:hover {
+    background: transparent;
+    color: var(--ui-green);
+}
+
+@media (max-width: 767px) {
+    .event-days label:not(.is-unavail) .day-time {
+        width: 100%;
+        font-size: 14px;
+    }
+    .event-days label p {
+        font-size: 14px;
+    }
+    .creat-event-content .event-days label {
+        padding: 10px 10px 10px 38px;
+    }
+    .creat-event-content .event-days label::before {
+        left: 10px;
+    }
+    .creat-event-content .event-days label::after {
+        left: 14.5px;
+    }
+    .event-quest h4 {
+        font-size: 15px;
+    }
+    .event-days .create-btn button {
+        width: 100%;
+    }
+    .event-days .create-btn .btn-edit {
+        margin: 20px 0 0;
+    }
+}
+
+
+/* Event Details page */
+
+section.site-main .section-title select,
+.section-title option {
+    color: var(--ui-dark);
+    cursor: pointer;
+}
+
+section.site-main .event-details-content {
+    min-height: 574px;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    overflow-x: scroll;
+}
+
+.event-details-content table {
+    width: 100%;
+}
+
+.event-details-content table th,
+.event-details-content table td {
+    padding: 20px 30px;
+    color: var(--ui-dark);
+    font-size: 14px;
+}
+
+.event-details-content table th {
+    border-bottom: 0.3px solid #023D4D;
+    font-family: var(--ui-font-medium);
+}
+
+.event-details-content table td p {
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1.0;
+    padding: 8px 10px;
+}
+
+.event-details-content table td p.is-schedule {
+    background: #ECF8F2;
+    color: var(--ui-green);
+}
+
+.event-details-content table td p.is-past {
+    background: #F2F5F7;
+    color: var(--ui-text);
+}
+
+.event-details-content table td p.is-cancel {
+    background: #FEF4E5;
+    color: #F98D00;
+}
+
+.event-details-content table td button {
+    font-size: 14px;
+    padding: 5px 5px 2px;
+    margin-left: auto;
+    display: block;
+}
+
+.event-details-content table td button.btn-view {
+    color: var(--ui-text);
+    border: 1px solid var(--ui-text);
+}
+
+.event-details-content table td button.btn-view:hover {
+    background: var(--ui-text);
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .event-details-content table th {
+        padding: 20px 105px 20px 30px;
+    }
+    .event-details-content table th:last-of-type {
+        padding: 20px 105px 20px 64px;
+    }
+}
+
+
+/* Booking Popup */
+
+.event-detail-popup .modal-dialog {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 20px auto;
+}
+
+.event-detail-popup .modal-content {
+    padding: 50px;
+    border-radius: 15px;
+}
+
+.event-detail-popup .modal-header button {
+    font-weight: 400;
+    font-size: 31px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    padding: 0;
+    margin: auto;
+    outline: 0;
+}
+
+.event-detail-popup .modal-content h2 {
+    color: var(--ui-dark);
+    font-family: var(--ui-font-bold);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.event-detail-popup .modal-content p {
+    color: var(--ui-dark);
+    font-family: var(--ui-font-medium);
+    font-size: 18px;
+    margin-bottom: 24px;
+    word-break: break-all;
+}
+
+.event-detail-popup .modal-content p span {
+    color: var(--ui-text);
+}
+
+.event-detail-popup .btn-delete {
+    background: #E22357;
+    color: #fff;
+}
+
+.event-detail-popup .btn-delete:hover {
+    background: transparent;
+    color: #E22357;
+}
+
+
+/* ============================ Connect Calnder 2 ============================ */
+
+.form-col.connect-calnder2 .client-btn button {
+    min-height: 180px;
+    background: #F2F5F7;
+    border-radius: 15px;
+    border: none;
+    font-size: 14px;
+}
+
+.form-col.connect-calnder2 .client-btn button img {
+    display: block;
+    max-width: 80px !important;
+    position: unset;
+    margin-bottom: 30px;
+}
+
+.page-content.book-event .profile-info img {
+    width: 80px;
+    height: 80px;
+}
+
+.page-content.book-event h2 {
+    font-size: 20px;
+    font-family: var(--ui-font-bold);
+    color: var(--ui-dark);
+}
+
+.page-content.book-event p {
+    color: var(--ui-dark);
+}
+
+.page-content.book-event .main-row {
+    padding-top: 0;
+    min-height: auto;
+}
+
+
+/* book Meeting With Client */
+
+.page-content.with-client [class*="book-event-"] {
+    background: #fff;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .page-content.with-client [class*="book-event-"] {
+        min-height: 660px;
+        margin-bottom: 0;
+    }
+}
+
+.page-content.with-client [class*="book-event-"] .table-border {
+    border-bottom: 0.3px solid rgba(2, 61, 77, 0.6);
+}
+
+.page-content.with-client .book-event-with {
+    padding: 20px;
+}
+
+.page-content.with-client .profile-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.page-content.with-client .profile-info h2 {
+    font-size: 16px;
+}
+
+.page-content.with-client .book-event-with p {
+    font-family: var(--ui-font-medium);
+}
+
+.page-content.with-client .book-event-with p i {
+    margin-right: 10px;
+}
+
+.page-content.with-client .book-event-with span {
+    font-size: 16px;
+    color: var(--ui-dark);
+}
+
+.page-content.with-client .book-event-daytable h2 {
+    padding: 20px 10px;
+}
+
+.page-content.with-client .book-event-daytable {
+    overflow-x: auto;
+}
+
+.book-event-daytable .calender-month p {
+    color: #678B94;
+    font-family: var(--ui-font-medium);
+    line-height: 1.0;
+    padding: 16px 0;
+}
+
+.book-event-daytable .calender-month p b {
+    font-family: var(--ui-font-bold);
+    color: var(--ui-dark);
+}
+
+.book-event-daytable .calender-month p i {
+    color: var(--ui-dark);
+}
+
+.book-event-daytable .calender-month p span {
+    margin: 0 50px;
+}
+
+.book-event-daytable table {
+    width: 100%;
+    text-align: center;
+}
+
+.book-event-daytable table th {
+    padding: 23px 10px;
+    color: #678B94;
+    font-family: var(--ui-font-medium);
+}
+
+.book-event-daytable table td {
+    padding: 21px 10px;
+    font-family: var(--ui-font-medium);
+    color: var(--ui-dark);
+}
+
+.book-event-daytable table td span {
+    border-radius: 10px;
+    padding: 3px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.book-event-daytable table td span::before {
+    position: absolute;
+    content: '';
+    background: #3DA371;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+    transition: .3s all ease;
+}
+
+.book-event-daytable table td.not-current-date {
+    color: #678B94;
+}
+
+.book-event-daytable table td.is-client-avail span {
+    border: 1px solid #3DA371;
+}
+
+.book-event-daytable table td.selected span {
+    background: #3DA371;
+    color: #fff;
+}
+
+.book-event-daytable table td.current-date span {
+    color: #3DA371;
+}
+
+.book-event-daytable table td.current-date span::before {
+    transition: .3s all ease;
+    display: inline-block;
+}
+
+.page-content.with-client .book-event-timetable {
+    max-height: 660px;
+    overflow-y: auto;
+}
+
+.page-content.with-client .book-event-timetable::-webkit-scrollbar {
+    display: none;
+}
+
+.page-content.with-client .book-event-timetable h2 {
+    font-size: 16px;
+    font-family: var(--ui-font-medium);
+    padding: 23px 10px;
+}
+
+.book-event-timetable .city-time p {
+    font-family: var(--ui-font-medium);
+    padding: 12px 0 12px 20px;
+}
+
+.book-event-timetable .city-time img {
+    max-width: 17px;
+    margin-right: 10px;
+}
+
+.book-event-timetable .time-selection {
+    padding: 23px 5px 0;
+}
+
+.book-event-timetable .time-selection input {
+    display: none;
+}
+
+.book-event-timetable .time-selection label {
+    border: 1px solid rgba(2, 61, 77, 0.6);
+    border-radius: 8px;
+    color: var(--ui-dark);
+    font-family: var(--ui-font-medium);
+    display: block;
+    text-align: center;
+    line-height: 1.0;
+    padding: 18px 0 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.book-event-timetable .time-selection .col-6 {
+    padding: 0 10px;
+}
+
+.book-event-timetable .time-selection input:checked+label {
+    color: #fff;
+    background: var(--ui-dark);
+}
+
+.event-confirm.modal p img {
+    max-width: 17px;
+}
+
+.event-confirm.modal p i,
+.event-confirm.modal p img {
+    margin-right: 10px;
+}
+
+.event-confirm.modal .event-confirm-form button {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .event-confirm.modal .event-confirm-form button {
+        width: 48%;
+    }
+}
+
+.event-confirm.modal .event-confirm-form {
+    border-top: 0.3px solid rgba(2, 61, 77, 0.6);
+    padding-top: 20px;
+}
+
+.event-confirm-form input {
+    height: 50px;
+    color: var(--ui-dark);
+}
+
+.event-confirm-form button.btn-delete {
+    background: transparent;
+    color: #E22357;
+}
+
+.event-confirm-form button.btn-delete:hover {
+    background: #E22357;
+    color: #fff;
+}
+
+.event-confirm-form button.btn-edit {
+    background: var(--ui-green);
+    color: #fff;
+}
+
+.event-confirm-form button.btn-edit:hover {
+    color: var(--ui-green);
+    background: transparent;
+}
+
+@media (max-width: 767px) {
+    .event-detail-popup .modal-content {
+        padding: 30px;
+    }
+    .event-detail-popup .modal-content h2 {
+        font-size: 28px;
+    }
+    .event-confirm-form button.btn-delete {
+        margin-bottom: 20px;
+    }
+    .event-detail-popup .modal-content p {
+        font-size: 14px;
+    }
+}
